@@ -11,27 +11,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150130233804) do
+ActiveRecord::Schema.define(version: 20150131041427) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "bands", force: :cascade do |t|
-    t.string   "bandname"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.integer  "venue_id"
-  end
-
   create_table "concerts", force: :cascade do |t|
-    t.integer  "band_id"
     t.integer  "venue_id"
     t.datetime "concert_date"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "bandname"
   end
 
-  add_index "concerts", ["band_id"], name: "index_concerts_on_band_id", using: :btree
   add_index "concerts", ["venue_id"], name: "index_concerts_on_venue_id", using: :btree
 
   create_table "venues", force: :cascade do |t|

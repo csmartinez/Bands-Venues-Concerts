@@ -1,3 +1,3 @@
 class Venue < ActiveRecord::Base
-  has_many(:bands)
+  has_many(:concerts)
 end

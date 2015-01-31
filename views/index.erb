@@ -1,4 +1,4 @@
-<h1><strong>Band Tracker</strong><small> Start with a venue to add bands</small></h1>
+<h1><strong>Concert Tracker</strong><small> Start with a venue to add concerts</small></h1>
 
 <div class="venuestotheleft2">
   <form action="/venues" method='post'>
@@ -8,15 +8,15 @@
 </form>
 
   <% @venues.each() do |venue| %>
-  <li><h5><a href="/venues/<%= venue.id() %>"> <%= venue.venuename %></a></h5></li>
+  <li><h4><a href="/venues/<%= venue.id() %>"> <%= venue.venuename %></a></h4></li>
   <% end %>
 
 </div>
 
-<h3>All Bands</h3></label>
+<h1><strong>Upcoming Concerts</strong><small> year/month/day</small></h1>
 
-  <% @bands.each() do |band| %>
-  <li><h5> <a href="/bands/<%= band.id() %>"> <%= band.bandname %></a></h5></li>
+<ul>
+  <% @concerts.each() do |concert| %>
+  <li><h4><%= concert.bandname() %> @ VENUE <%= concert.venue_id %> on <%= concert.concert_date() %><h4></li>
   <% end %>
-
-<h1><strong>Upcoming Concerts</strong><small> Coming Soon</small></h1>
+</ul>
