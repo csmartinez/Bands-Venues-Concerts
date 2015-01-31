@@ -1,0 +1,16 @@
+.venuestotheleft {
+  float: left;
+}
+.bandstotheright {
+  float: right;
+}
+body {
+  background-image: url("http://www.mrksmedia.com/images/mrks_bckg.png");
+}
+a {
+  color: grey;
+}
+a:hover, a:focus {
+    text-decoration:underline;
+    color: black;
+}

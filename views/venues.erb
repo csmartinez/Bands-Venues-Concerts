@@ -1,0 +1,16 @@
+<h1><strong><%= @venue.venuename %></strong><small> Add Bands</small></h1>
+
+
+<form action="/venues/<%= @venue.id() %>" method="post">
+   <input id="venue_id" name="venue_id" type="hidden" value="<%= @venue.id() %>">
+  <label for='bandname'><h4><strong>Band's Name</strong></h4></label>
+  <input id='bandname' name='bandname' type='text' placeholder= 'Bombay Bicycle Club'>
+
+  <button type="submit" class="btn btn-success">Add band</button>
+</form>
+
+<ul>
+  <% @venue.bands.each() do |band| %>
+  <li> <%= band.bandname() %></li>
+  <% end %>
+</ul>

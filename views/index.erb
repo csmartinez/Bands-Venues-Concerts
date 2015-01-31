@@ -1,0 +1,22 @@
+<h1><strong>Band Tracker</strong><small> Start with a venue to add bands</small></h1>
+
+<div class="venuestotheleft2">
+  <form action="/venues" method='post'>
+    <label for='venuename'><h3>Venue name</h3></label>
+    <input id='venuename' name='venuename' type='text' placeholder='The Marquee'>
+  <button type="submit" class="btn btn-success">Add a venue</button>
+</form>
+
+  <% @venues.each() do |venue| %>
+  <li><h5><a href="/venues/<%= venue.id() %>"> <%= venue.venuename %></a></h5></li>
+  <% end %>
+
+</div>
+
+<h3>All Bands</h3></label>
+
+  <% @bands.each() do |band| %>
+  <li><h5> <a href="/bands/<%= band.id() %>"> <%= band.bandname %></a></h5></li>
+  <% end %>
+
+<h1><strong>Upcoming Concerts</strong><small> Coming Soon</small></h1>
