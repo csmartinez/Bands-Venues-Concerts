@@ -4,10 +4,10 @@
 <form action="/venues/<%= @venue.id() %>" method="post">
    <input id="venue_id" name="venue_id" type="hidden" value="<%= @venue.id() %>">
 
-  <label for='bandname'><h4><strong>Band's Name</strong></h4></label>
+  <label for='bandname'><h4><strong>Band's Name: </strong></h4></label>
   <input id='bandname' name='bandname' type='text' placeholder= 'Bombay Bicycle Club'>
 
-  <label for='concert_date'><h4><strong>Concert Date</strong></h4></label>
+  <label for='concert_date'><h4><strong>Concert Date: </strong></h4></label>
   <input id='concert_date' name='concert_date' type='text' placeholder= 'year-mm-dd'>
 
 

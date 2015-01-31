@@ -5,12 +5,13 @@
   float: right;
 }
 body {
-  background-image: url("http://www.mrksmedia.com/images/mrks_bckg.png");
+  background-image: url("http://karlking.us/images/bandshell_silhouette.jpg");
+  color: white;
 }
 a {
-  color: grey;
+  color: green;
 }
 a:hover, a:focus {
     text-decoration:underline;
-    color: black;
+    color: white;
 }

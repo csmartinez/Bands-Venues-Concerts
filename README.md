@@ -1,5 +1,7 @@
 ##Venue/Bands Organizer
-Stores and lists venues and bands as a ONE-to-many relationship using Active Record database. Currently the tables don't seem to have any relationship at all with each other though. I experimented with a many-to-many relationship with a "has many through" type thing but decided to take a step back, not finding a good template for an app.rb to reference about it. For some reason deleting the join table ruins everything, even though I've had success in the past not using one for a one-to-many. I considered dropping the database and making another, as well as dropping the third class and not using index on the new tables. Maybe have the bandname in the concert table next time? Then on the venue page just add concerts.
+Stores and lists venues and bands as a ONE-to-many relationship using Active Record database. I had previously made bands it's own table and concerts the join table to set up a many-to-many, but couldn't work through the drop down menu to choose from venues, and then bands, to create a new concert. I will eventually do it the right way again (has_and_belongs_to) and will probably need to reference this: http://www.theodinproject.com/ruby-on-rails/advanced-forms
+
+
 
 Ruby version 2.2
 
@@ -24,7 +26,7 @@ tests for ruby methods can be run using the rspec gem
 
 ##Motivation
 
-To practice creating a Ruby class and methods, Active Record, one-to-many relationships, using postgres databases.
+To practice creating a Ruby class and methods, Active Record, many-to-many relationships, using postgres databases.
 
 ##License
 
