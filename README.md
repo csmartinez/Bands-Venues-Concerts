@@ -13,6 +13,7 @@ Ruby version 2.2
 4. `gem install bundler`
 5.   `bundle`
 6. in a separate tab in the terminal, enter 'postgres'
+    run rake db:create in project folder, and then rake db:migrate
 7.   `ruby app.rb`
 
 8. go to https://localhost:4567 in web browser

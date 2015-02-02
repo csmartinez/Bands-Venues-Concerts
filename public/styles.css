@@ -15,3 +15,9 @@ a:hover, a:focus {
     text-decoration:underline;
     color: white;
 }
+input {
+  color: grey;
+}
+.greytext {
+  color: black;
+}
