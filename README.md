@@ -1,6 +1,5 @@
 ##Venue/Bands Organizer
-Stores and lists venues and bands as a ONE-to-many relationship using Active Record database. I had previously made bands it's own table and concerts the join table to set up a many-to-many, but couldn't work through the drop down menu to choose from venues, and then bands, to create a new concert. I will eventually do it the right way again (has_and_belongs_to) and will probably need to reference this: http://www.theodinproject.com/ruby-on-rails/advanced-forms
-
+Stores and lists venues and bands as a many-to-many relationship using Active Record database to create concerts with a concert date.
 
 
 Ruby version 2.2
