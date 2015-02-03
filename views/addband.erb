@@ -1,0 +1,14 @@
+<h1>Add Bands Here <small> Click any band to add venues</small></h1>
+  <form action="/bands" method='post'>
+    <label for='bandname'><h3>Band: </h3></label>
+    <input id='bandname' name='bandname' type='text' placeholder='The Arctic Monkeys'>
+    <button type="submit" class="btn btn-danger">Add a band</button>
+  </form>
+
+<div class="redtext">
+  <% @bands.each() do |band| %>
+  <li><h5><a href="/addvenue"><%= band.bandname %></a></h5></li>
+  <% end %>
+</div>
+
+<a href="/"><button type="button" class="btn btn-danger">Back to home</button></a>

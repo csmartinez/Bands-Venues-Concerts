@@ -1,0 +1,12 @@
+<h1>Add Venues Here <small> Click any venue to make a concert</small></h1>
+  <form action="/venues" method='post'>
+    <label for='venuename'><h3>Venue: </h3></label>
+    <input id='venuename' name='venuename' type='text' placeholder='The Marquee'>
+    <button type="submit" class="btn btn-primary">Add a venue</button>
+  </form>
+
+  <% @venues.each() do |venue| %>
+  <li><h5><a href="/addconcert"><%= venue.venuename %></a></h5></li>
+  <% end %>
+
+  <a href="/addband"><button type="button" class="btn btn-primary">Back to bands</button></a>

@@ -21,7 +21,7 @@ end
 post('/bands') do
   bandname = params.fetch('bandname')
   @band = Band.create({:bandname => bandname})
-  redirect('/')
+  redirect('/addband')
 end
 
 post('/concerts') do
@@ -29,9 +29,29 @@ post('/concerts') do
   band_id = params.fetch('band_id')
   venue_id = params.fetch('venue_id')
   @concert = Concert.create({:concert_date => concert_date, :band_id => band_id, :venue_id => venue_id})
-  redirect('/')
+  redirect('/addconcert')
 end
 
+get('/addconcert') do
+  @concerts = Concert.all()
+  @venues = Venue.all()
+  @bands = Band.all()
+  erb(:addconcert)
+end
+
+get('/addband') do
+  @concerts = Concert.all()
+  @venues = Venue.all()
+  @bands = Band.all()
+  erb(:addband)
+end
+
+get('/addvenue') do
+  @concerts = Concert.all()
+  @venues = Venue.all()
+  @bands = Band.all()
+  erb(:addvenue)
+end
 # get('/venues/:id') do
 #   @venue = Venue.find(params.fetch("id").to_i())
 #   @concerts = Concert.all()

@@ -8,9 +8,6 @@ body {
   background-image: url("http://karlking.us/images/bandshell_silhouette.jpg");
   color: white;
 }
-a {
-  color: green;
-}
 a:hover, a:focus {
     text-decoration:underline;
     color: white;
@@ -19,5 +16,11 @@ input {
   color: grey;
 }
 .greytext {
-  color: black;
+  color: grey;
+}
+.white {
+  color: white;
+}
+a {
+  color: white;
 }

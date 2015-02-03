@@ -1,0 +1,41 @@
+<h1>Create a new concert</h1>
+
+<form action="/concerts" method='post'>
+  <h5>Band</h5>
+  <div class= "greytext">
+    <select id='band_id' name='band_id' type='text'>
+      <% @bands.each() do |band| %>
+      <option value="<%= band.id()%>"> <%= band.bandname() %> </option>
+      <% end %>
+    </select>
+  </div>
+
+  <h5>at Venue</h5>
+  <div class="greytext">
+    <select id='venue_id' name='venue_id' type='text'>
+      <% @venues.each() do |venue| %>
+      <option value="<%= venue.id()%>"> <%= venue.venuename() %> </option>
+      <% end %>
+    </select>
+  </div>
+
+  <label for='concert_date'><h5>Concert date (year/mm/dd) </h5></label>
+  <input id='concert_date' name='concert_date' type='text' placeholder='2013-04-01'>
+
+  <button type="submit" class="btn btn-success">Add a concert</button>
+</form>
+
+<h1><strong>Upcoming Concerts</strong><small> year/month/day</small></h1>
+
+<ul>
+  <% if @concerts.any?() %>
+  <% @concerts.each() do |concert| %>
+  <li><h4><%= concert.band.bandname.upcase %> @ <%= concert.venue.venuename.upcase %> on <%= concert.concert_date %><h4></li>
+    <% end %>
+    <% else %>
+    <%= "No Events Scheduled" %>
+    <% end %>
+  </ul>
+
+  <a href="/"><button type="button" class="btn btn-success">Back to home</button></a>
+  

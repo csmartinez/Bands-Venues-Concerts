@@ -1,60 +1,18 @@
-<h1><strong>Concert Tracker</strong><small> Add new bands and venues</small></h1>
+<h1><strong>Concert Tracker</strong><small> Start by adding new bands</small></h1>
+  <a href="/addband"><a href="/addband"><button type="button" class="btn btn-danger btn-xs">Add Bands </button></a>
+  <a href="/addvenue"><a href="/addvenue"><button type="button" class="btn btn-primary btn-xs">Add Venues </button></a>
+  <a href="/addconcert"><button type="button" class="btn btn-success btn-xs">Add concerts </button></a>
 
-  <form action="/venues" method='post'>
-    <label for='venuename'><h3>Venue name: </h3></label>
-    <input id='venuename' name='venuename' type='text' placeholder='The Marquee'>
-    <button type="submit" class="btn btn-success">Add a venue</button>
-  </form>
-
-    <% @venues.each() do |venue| %>
-    <li><h5><%= venue.venuename %></h5></li>
-    <% end %>
-
-    <form action="/bands" method='post'>
-    <label for='bandname'><h3>Band name: </h3></label>
-    <input id='bandname' name='bandname' type='text' placeholder='The Arctic Monkeys'>
-    <button type="submit" class="btn btn-success">Add a band</button>
-  </form>
-
-    <% @bands.each() do |band| %>
-    <li><h5><%= band.bandname %></h5></li>
-    <% end %>
-
-  <h3>Create a new concert</h3>
-
-  <form action="/concerts" method='post'>
-  <h5>Band</h5>
-  <div class= "greytext">
-  <select id='band_id' name='band_id' type='text'>
-    <% @bands.each() do |band| %>
-    <option value="<%= band.id()%>"> <%= band.bandname() %> </option>
-    <% end %>
-  </select>
-</div>
-
-  <h5>at Venue</h5>
-  <div class="greytext">
-  <select id='venue_id' name='venue_id' type='text'>
-    <% @venues.each() do |venue| %>
-    <option value="<%= venue.id()%>"> <%= venue.venuename() %> </option>
-    <% end %>
-  </select>
-</div>
-
-<label for='concert_date'><h5>Concert date (year/mm/dd) </h5></label>
-<input id='concert_date' name='concert_date' type='text' placeholder='2013-04-01'>
-
-  <button type="submit" class="btn btn-success">Add a concert</button>
-</form>
-
-<h1><strong>Upcoming Concerts</strong><small> year/month/day</small></h1>
+<div class="venuestotheleft">
+<h2><strong>Upcoming Concerts</strong><small> year/month/day</small></h2>
 
 <ul>
   <% if @concerts.any?() %>
   <% @concerts.each() do |concert| %>
-  <li><h4><%= concert.band.bandname %> @ <%= concert.venue.venuename %> on <%= concert.concert_date %><h4></li>
+  <li><h4><%= concert.band.bandname.upcase %> @ <%= concert.venue.venuename.upcase %> on <%= concert.concert_date %><h4></li>
     <% end %>
     <% else %>
     <%= "No Events Scheduled" %>
     <% end %>
   </ul>
+</div>
