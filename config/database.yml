@@ -1,7 +1,9 @@
 development:
   adapter: postgresql
-  database: bandtracking_development
+  database: bandtraacking_development
+  template: template0
 
 test:
   adapter: postgresql
-  database: bandtracking_test
+  database: bandtraacking_test
+  template: template0

@@ -15,13 +15,21 @@ end
 post('/venues') do
   venuename = params.fetch('venuename')
   @venue = Venue.create({:venuename => venuename})
-  redirect('/')
+  if @venue.save()
+    redirect back
+  else
+    erb(:errors)
+  end
 end
 
 post('/bands') do
   bandname = params.fetch('bandname')
   @band = Band.create({:bandname => bandname})
-  redirect('/addband')
+  if @band.save()
+    redirect back
+  else
+    erb(:errors)
+  end
 end
 
 post('/concerts') do
@@ -29,7 +37,6 @@ post('/concerts') do
   band_id = params.fetch('band_id')
   venue_id = params.fetch('venue_id')
   @concert = Concert.create({:concert_date => concert_date, :band_id => band_id, :venue_id => venue_id})
-  redirect('/addconcert')
 end
 
 get('/addconcert') do
