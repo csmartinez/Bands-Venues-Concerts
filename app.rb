@@ -59,6 +59,7 @@ get('/addvenue') do
   @bands = Band.all()
   erb(:addvenue)
 end
+
 # get('/venues/:id') do
 #   @venue = Venue.find(params.fetch("id").to_i())
 #   @concerts = Concert.all()
